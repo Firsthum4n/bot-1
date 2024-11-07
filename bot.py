@@ -7,7 +7,7 @@ bot = telebot.TeleBot('7409547676:AAHL1hZVam5v9PUJteN4E-q9FNvzYy06YWE')
 
 
 
-API_URL = 'http://trusight.ru/api'
+API_URL = 'http://trusight.ru/users/api/'
 
 @bot.message_handler(commands=['start'])
 def start_handler(message):
@@ -20,7 +20,7 @@ def start_handler(message):
         'telegram_id': telegram_id,
         'telegram_username': telegram_username
     }
-    url = f"{API_URL}/login?{urlencode(params)}"
+    url = f"{API_URL}/register?{urlencode(params)}"
 
     bot.send_message(message.chat.id, f"Перейдите по этой ссылке, чтобы авторизоваться: {url}")
 
